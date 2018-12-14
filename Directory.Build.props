@@ -1,0 +1,13 @@
+﻿<Project>
+  <Import Project="build\dependencies.props" />
+  
+  <PropertyGroup>
+    <Product>Migrap ASP.NET Core HATEOAS</Product>
+    <RepositoryUrl>https://github.com/migrap/migrap.aspnetcore.hateoas</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <UseRoutingFromFeatureBranch>true</UseRoutingFromFeatureBranch>
+  </PropertyGroup>
+
+</Project>

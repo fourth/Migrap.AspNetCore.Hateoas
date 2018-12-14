@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26014.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28407.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1DD1ED61-4C6B-4392-84F4-788533C055B1}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Migrap.AspNetCore.Hateoas.Abstractions", "src\Migrap.AspNetCore.Hateoas.Abstractions\Migrap.AspNetCore.Hateoas.Abstractions.csproj", "{A151771A-539A-4265-AFA0-120CAB00935A}"
 EndProject
@@ -16,6 +19,23 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Migrap.AspNetCore.Hateoas.JsonApi", "src\Migrap.AspNetCore.Hateoas.JsonApi\Migrap.AspNetCore.Hateoas.JsonApi.csproj", "{88AFF217-25DD-45B3-B958-C8F4CBDABAA2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Migrap.AspNetCore.Hateoas.Reap", "src\Migrap.AspNetCore.Hateoas.Reap\Migrap.AspNetCore.Hateoas.Reap.csproj", "{AC9EF9E3-360A-4963-B346-ED815B8D46EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{48667A8D-5B92-43C3-89FF-1E664E9F61AE}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Directory.Build.props = Directory.Build.props
+		Directory.Build.targets = Directory.Build.targets
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{29DDF844-E436-4351-9637-46FB7B187E9C}"
+	ProjectSection(SolutionItems) = preProject
+		build\dependencies.props = build\dependencies.props
+		build\repo.props = build\repo.props
+		build\sources.props = build\sources.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
