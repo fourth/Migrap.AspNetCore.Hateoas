@@ -1,6 +1,14 @@
 # Migrap.AspNetCore.Hateoas
 
+## Description
+
 HATEOAS (Hypermedia as the Engine of Application State) framework for ASP.NET Core.
+
+## Commands
+
+.\build.cmd /t:clean
+
+## Example(s)
 
 Current implementation(s):
 - Siren
