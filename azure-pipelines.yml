@@ -29,7 +29,7 @@ jobs:
         release_configuration:
           _BuildConfig: Release
     steps:
-    - script: eng\common\build.cmd
+    - script: eng\common\cibuild.cmd
         -configuration $(_BuildConfig)
         -prepareMachine
       name: Build
@@ -51,7 +51,7 @@ jobs:
         release_configuration:
           _BuildConfig: Release
     steps:
-    - script: eng/common/build.sh
+    - script: eng/common/cibuild.sh
         --configuration $(_BuildConfig)
         --prepareMachine
       name: Build
