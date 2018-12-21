@@ -6,7 +6,7 @@ HATEOAS (Hypermedia as the Engine of Application State) framework for ASP.NET Co
 
 ## Commands
 
-.\build.cmd /t:clean
+https://github.com/aspnet/Extensions/blob/release/2.2/Directory.Build.props
 
 ## Example(s)
 
