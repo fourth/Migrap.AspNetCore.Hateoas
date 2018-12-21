@@ -17,13 +17,12 @@ pr:
 jobs:
 - template: /eng/common/templates/job/job.yml
   parameters:
-    name: Windows_NT
+    name: Windows
     enableTelemetry: true
     enablePublishBuildArtifacts: true
     helixRepo: dotnet/arcade-minimalci-sample
     pool:
-      name: NetCorePublic-Int-Pool
-      queue: Windows.10.Amd64.Open
+      name: Hosted VS2017
     strategy:
       matrix:
         debug_configuration:
@@ -34,29 +33,6 @@ jobs:
     - script: eng\common\cibuild.cmd
         -configuration $(_BuildConfig)
         -prepareMachine
-      name: Build
-      displayName: Build
-      condition: succeeded()
-
-- template: /eng/common/templates/job/job.yml
-  parameters:
-    name: OSX
-    enableTelemetry: true
-    enablePublishBuildArtifacts: true
-    helixRepo: dotnet/arcade-minimalci-sample
-    pool:
-      name: NetCorePublic-Int-Pool
-      queue: OSX.1012.Amd64.Open
-    strategy:
-      matrix:
-        debug_configuration:
-          _BuildConfig: Debug
-        release_configuration:
-          _BuildConfig: Release
-    steps:
-    - script: eng/common/cibuild.sh
-        --configuration $(_BuildConfig)
-        --prepareMachine
       name: Build
       displayName: Build
       condition: succeeded()
