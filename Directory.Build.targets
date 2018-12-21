@@ -1,6 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project>
+  <Import Project="Sdk.targets" Sdk="Microsoft.DotNet.Arcade.Sdk" />
+</Project>
+
+<!-- <Project>
   <PropertyGroup>
     <RuntimeFrameworkVersion Condition=" '$(TargetFramework)' == 'netcoreapp2.2' ">$(MicrosoftNETCoreApp22PackageVersion)</RuntimeFrameworkVersion>
     <NETStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard2.0' ">$(NETStandardLibrary20PackageVersion)</NETStandardImplicitPackageVersion>
   </PropertyGroup>
-</Project>
+</Project> -->

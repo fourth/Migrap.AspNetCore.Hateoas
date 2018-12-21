@@ -1,0 +1,18 @@
+﻿<Project>
+  <PropertyGroup>
+    <VersionPrefix>2.2.0</VersionPrefix>
+    <PreReleaseVersionLabel>prerelease</PreReleaseVersionLabel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <PropertyGroup Label="Package Versions">
+    <MicrosoftAspNetCoreHttpAbstractionsPackageVersion>2.2.0</MicrosoftAspNetCoreHttpAbstractionsPackageVersion>
+    <MicrosoftAspNetCoreMvcAbstractionsPackageVersion>2.2.0</MicrosoftAspNetCoreMvcAbstractionsPackageVersion>
+    <MicrosoftAspNetCoreMvcFormattersJsonPackageVersion>2.2.0</MicrosoftAspNetCoreMvcFormattersJsonPackageVersion>
+    <MicrosoftExtensionsDependencyInjectionAbstractionsPackageVersion>2.2.0</MicrosoftExtensionsDependencyInjectionAbstractionsPackageVersion>
+    <MicrosoftExtensionsOptionsPackageVersion>2.2.0</MicrosoftExtensionsOptionsPackageVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Package Versions: Pinned" />
+  <Import Project="$(DotNetPackageVersionPropsPath)" Condition=" '$(DotNetPackageVersionPropsPath)' != '' " />
+</Project>
