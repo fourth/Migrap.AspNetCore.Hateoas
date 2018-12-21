@@ -1,59 +1,61 @@
+name: $(Date:yyyyMMdd).$(Rev:rr)
+
 variables:
-- name: Build.Repository.Clean
-  value: true
- 
+  - name: Build.Repository.Clean
+    value: true
+
 resources:
   containers:
-  - container: LinuxContainer
-    image: microsoft/dotnet-buildtools-prereqs:ubuntu-14.04-cross-0cd4667-20170319080304
+    - container: LinuxContainer
+      image: microsoft/dotnet-buildtools-prereqs:ubuntu-14.04-cross-0cd4667-20170319080304
 
 # CI and PR triggers
 trigger:
-- master
+  - master
 
 pr:
-- master
+  - master
 
 jobs:
-- template: /eng/common/templates/job/job.yml
-  parameters:
-    name: Windows
-    enableTelemetry: true
-    enablePublishBuildArtifacts: true
-    pool:
-      name: Hosted VS2017
-    strategy:
-      matrix:
-        debug_configuration:
-          _BuildConfig: Debug
-        release_configuration:
-          _BuildConfig: Release
-    steps:
-    - script: eng\common\cibuild.cmd
-        -configuration $(_BuildConfig)
-        -prepareMachine
-      name: Build
-      displayName: Build
-      condition: succeeded()
+  - template: /eng/common/templates/job/job.yml
+    parameters:
+      name: Windows
+      enableTelemetry: true
+      enablePublishBuildArtifacts: true
+      pool:
+        name: Hosted VS2017
+      strategy:
+        matrix:
+          debug_configuration:
+            _BuildConfig: Debug
+          release_configuration:
+            _BuildConfig: Release
+      steps:
+        - script: eng\common\cibuild.cmd
+            -configuration $(_BuildConfig)
+            -prepareMachine
+          name: Build
+          displayName: Build
+          condition: succeeded()
 
-- template: /eng/common/templates/job/job.yml
-  parameters:
-    name: Linux
-    enableTelemetry: true
-    enablePublishBuildArtifacts: true
-    pool:
-      name: Hosted Ubuntu 1604
-    container: LinuxContainer
-    strategy:
-      matrix:
-        debug_configuration:
-          _BuildConfig: Debug
-        release_configuration:
-          _BuildConfig: Release
-    steps:
-    - script: eng/common/cibuild.sh
-        --configuration $(_BuildConfig)
-        --prepareMachine
-      name: Build
-      displayName: Build
-      condition: succeeded()
+  - template: /eng/common/templates/job/job.yml
+    parameters:
+      name: Linux
+      enableTelemetry: true
+      enablePublishBuildArtifacts: true
+      pool:
+        name: Hosted Ubuntu 1604
+      container: LinuxContainer
+      strategy:
+        matrix:
+          debug_configuration:
+            _BuildConfig: Debug
+          release_configuration:
+            _BuildConfig: Release
+      steps:
+        - script: eng/common/cibuild.sh
+            --configuration $(_BuildConfig)
+            --prepareMachine
+          name: Build
+          displayName: Build
+          condition: succeeded()
